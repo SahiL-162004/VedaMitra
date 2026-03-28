@@ -13,6 +13,10 @@ import threading
 import time
 import json
 import base64
+import json
+import os
+import re
+from serpapi import GoogleSearch
 import markdown
 from dotenv import load_dotenv
 from faster_whisper import WhisperModel
@@ -393,18 +397,58 @@ else:
 
 # ---------------- IMAGE MAP ----------------
 @st.cache_resource
+
+
+# ---------------- LOAD LOCAL IMAGE MAP ----------------
 def load_image_map():
     with open("data/image_map.json", "r") as f:
         return json.load(f)
 
 image_map = load_image_map()
 
+
+# ---------------- SERPAPI IMAGE SEARCH ----------------
+def fetch_images(query, num_images=3):
+    try:
+        params = {
+            "engine": "google_images",
+            "q": query,
+            "api_key": os.getenv("SERPAPI_KEY"),
+            "num": num_images
+        }
+
+        results = GoogleSearch(params).get_dict()
+
+        return [img["original"] for img in results.get("images_results", [])[:num_images]]
+
+    except Exception:
+        return []
+
+
+# ---------------- QUERY OPTIMIZATION ----------------
+def extract_search_query(query):
+    query = query.lower()
+
+    if "yoga" in query:
+        return query + " yoga pose"
+    elif "who" in query or "sita" in query or "rama" in query:
+        return query + " indian mythology character"
+    else:
+        return query + " india"
+
+
+# ---------------- FINAL HYBRID FUNCTION ----------------
 def fetch_image(query):
-    query = re.sub(r'[^\w\s]', '', query.lower())
+    cleaned_query = re.sub(r'[^\w\s]', '', query.lower())
+
+    # 🔍 1. Check local dataset first
     for key, path in image_map.items():
-        if key in query:
-            return os.path.join("data", path)
-    return None
+        if key in cleaned_query:
+            return [os.path.join("data", path)]  # return as list
+
+    # 🌐 2. Fallback to SerpAPI
+    search_query = extract_search_query(cleaned_query)
+    return fetch_images(search_query, num_images=3)
 
 # ---------------- TEXT CLEAN ----------------
 def remove_diacritics(text):
@@ -548,9 +592,17 @@ if user_input:
         result = qa_chain.invoke({"question": user_input})
         answer = result["answer"]
 
-    img = fetch_image(user_input)
-    if img and os.path.exists(img):
-        st.image(img, use_container_width=True)
+    images = fetch_image(user_input)
+
+    if images:
+
+        cols = st.columns(len(images))
+        for i, img in enumerate(images):
+            with cols[i]:
+                if isinstance(img, str) and os.path.exists(img):
+                    st.image(img, use_container_width=True)
+                else:
+                    st.image(img, use_container_width=True)
 
     placeholder = st.empty()
     temp = ""
