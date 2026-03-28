@@ -1,0 +1,12 @@
+[
+  "data\\philosophy\\heritage_data.jsonl",
+  "data\\yoga\\yoga_poses.txt",
+  "data\\philosophy\\philosophy_json.json",
+  "data\\epics\\valmiki_ramayana.jsonl",
+  "data\\epics\\ramayana.txt",
+  "data\\ayurveda\\ayurveda_json.json",
+  "data\\yoga\\yoga_json.json",
+  "data\\epics\\mahabharta_json.json",
+  "data\\epics\\book_data.jsonl",
+  "data\\epics\\mahabharata_book_data.jsonl"
+]

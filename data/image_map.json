@@ -1,0 +1,374 @@
+{
+  "boat": "images/navasana.jpg",
+  "navasana": "images/navasana.jpg",
+
+  "bow": "images/dhanurasana.jpg",
+  "dhanurasana": "images/dhanurasana.jpg",
+
+  "bridge": "images/setubandhasarvangasana.jpg",
+  "setu bandha sarvangasana": "images/setubandhasarvangasana.jpg",
+
+  "butterfly": "images/baddhakonasana.jpg",
+  "baddha konasana": "images/baddhakonasana.jpg",
+
+  "camel": "images/ustrasana.jpg",
+  "ustrasana": "images/ustrasana.jpg",
+
+  "cat": "images/marjaryasana.jpg",
+  "marjaryasana": "images/marjaryasana.jpg",
+
+  "chair": "images/utkatasana.jpg",
+  "utkatasana": "images/utkatasana.jpg",
+
+  "child": "images/balasana.jpg",
+  "balasana": "images/balasana.jpg",
+
+  "corpse": "images/shavasana.jpg",
+  "shavasana": "images/shavasana.jpg",
+
+  "cow": "images/bitilasana.jpg",
+  "bitilasana": "images/bitilasana.jpg",
+
+  "crescent lunge": "images/ashtachandrasana.jpg",
+  "ashta chandrasana": "images/ashtachandrasana.jpg",
+
+  "crescent moon": "images/ardhachandrasana.jpg",
+  "ardha chandrasana": "images/ardhachandrasana.jpg",
+
+  "crow": "images/bakasana.jpg",
+  "bakasana": "images/bakasana.jpg",
+
+  "dolphin": "images/pinchamayurasana.jpg",
+  "pincha mayurasana": "images/pinchamayurasana.jpg",
+
+  "downward dog": "images/adhomukhasvanasana.jpg",
+  "adho mukha svanasana": "images/adhomukhasvanasana.jpg",
+
+  "eagle": "images/garudasana.jpg",
+  "garudasana": "images/garudasana.jpg",
+
+  "extended hand to toe": "images/utthitahastapadangusthasana.jpg",
+  "utthita hasta padangusthasana": "images/utthitahastapadangusthasana.jpg",
+
+  "extended side angle": "images/utthitaparsvakonasana.jpg",
+  "utthita parsvakonasana": "images/utthitaparsvakonasana.jpg",
+
+  "forearm stand": "images/pinchamayurasana.jpg",
+
+  "forward bend": "images/uttanasana.jpg",
+  "uttanasana": "images/uttanasana.jpg",
+
+  "garland": "images/malasana.jpg",
+  "malasana": "images/malasana.jpg",
+
+  "half boat": "images/ardhanavasana.jpg",
+  "ardha navasana": "images/ardhanavasana.jpg",
+
+  "half lord of the fishes": "images/ardhamatsyendrasana.jpg",
+  "ardha matsyendrasana": "images/ardhamatsyendrasana.jpg",
+
+  "half moon": "images/ardhachandrasana.jpg",
+
+  "handstand": "images/adhomukhavrksasana.jpg",
+  "adho mukha vrksasana": "images/adhomukhavrksasana.jpg",
+
+  "king pigeon": "images/ekapadarajakapotasana.jpg",
+  "eka pada rajakapotasana": "images/ekapadarajakapotasana.jpg",
+
+  "lotus": "images/padmasana.jpg",
+  "padmasana": "images/padmasana.jpg",
+
+  "low lunge": "images/anjaneyasana.jpg",
+  "anjaneyasana": "images/anjaneyasana.jpg",
+
+  "pigeon": "images/suptakapotasana.jpg",
+  "supta kapotasana": "images/suptakapotasana.jpg",
+
+  "plank": "images/phalakasana.jpg",
+  "phalakasana": "images/phalakasana.jpg",
+
+  "plow": "images/halasana.jpg",
+  "halasana": "images/halasana.jpg",
+
+  "cat cow": "images/marjaryasana.jpg",
+  "marjaryasana": "images/marjaryasana.jpg",
+
+  "pyramid": "images/parsvottanasana.jpg",
+  "parsvottanasana": "images/parsvottanasana.jpg",
+
+  "reverse warrior": "images/parsvavirabhadrasana.jpg",
+
+  "seated forward bend": "images/paschimottanasana.jpg",
+  "paschimottanasana": "images/paschimottanasana.jpg",
+
+  "shoulder stand": "images/salambasarvangasana.jpg",
+
+  "side plank": "images/vasisthasana.jpg",
+  "vasisthasana": "images/vasisthasana.jpg",
+
+  "side splits": "images/upavishtakonasana.jpg",
+  "upavishta konasana": "images/upavishtakonasana.jpg",
+
+  "sphinx": "images/salambabhujangasana.jpg",
+
+  "splits": "images/hanumanasana.jpg",
+  "hanumanasana": "images/hanumanasana.jpg",
+
+  "standing forward bend": "images/uttanasana.jpg",
+
+  "tree": "images/vrksasana.jpg",
+  "vrksasana": "images/vrksasana.jpg",
+
+  "triangle": "images/trikonasana.jpg",
+  "trikonasana": "images/trikonasana.jpg",
+
+  "upward dog": "images/urdhvamukhasvanasana.jpg",
+
+  "warrior one": "images/virabhadrasana1.jpg",
+  "warrior two": "images/virabhadrasana2.jpg",
+  "warrior three": "images/virabhadrasana3.jpg",
+
+  "wheel": "images/urdhvadhanurasana.jpg",
+
+  "wild thing": "images/camatkarasana.jpg",
+  "camatkarasana": "images/camatkarasana.jpg",
+  
+  "stress": "images/shavasana.jpg",
+  "stress relief": "images/shavasana.jpg",
+  "anxiety": "images/balasana.jpg",
+  "calm": "images/padmasana.jpg",
+  "peace": "images/padmasana.jpg",
+  "meditation": "images/padmasana.jpg",
+  "relax": "images/shavasana.jpg",
+  "relaxation": "images/shavasana.jpg",
+  "sleep": "images/shavasana.jpg",
+  "insomnia": "images/shavasana.jpg",
+
+  "back pain": "images/bhujangasana.jpg",
+  "lower back pain": "images/halasana.jpg",
+  "spine": "images/marjaryasana.jpg",
+  "posture": "images/tadasana.jpg",
+  "slouching": "images/tadasana.jpg",
+
+  "weight loss": "images/phalakasana.jpg",
+  "fat loss": "images/phalakasana.jpg",
+  "belly fat": "images/navasana.jpg",
+  "core strength": "images/navasana.jpg",
+  "abs": "images/navasana.jpg",
+  "fitness": "images/virabhadrasana1.jpg",
+
+  "flexibility": "images/paschimottanasana.jpg",
+  "stretch": "images/uttanasana.jpg",
+  "tight muscles": "images/uttanasana.jpg",
+  "hamstrings": "images/paschimottanasana.jpg",
+  "hips": "images/baddhakonasana.jpg",
+
+  "strength": "images/phalakasana.jpg",
+  "balance": "images/vrksasana.jpg",
+  "stability": "images/vrksasana.jpg",
+  "focus": "images/vrksasana.jpg",
+  "concentration": "images/padmasana.jpg",
+
+  "digestion": "images/pavanamuktasana.jpg",
+  "immunity": "images/bhujangasana.jpg",
+  "blood circulation": "images/sarvangasana.jpg",
+  "breathing": "images/pranayama.jpg",
+  "lungs": "images/pranayama.jpg",
+
+  "neck pain": "images/marjaryasana.jpg",
+  "shoulder pain": "images/garudasana.jpg",
+  "long sitting": "images/uttanasana.jpg",
+  "desk job": "images/tadasana.jpg",
+  "eye strain": "images/palming.jpg",
+  
+  "abhimanyu in chakravyuha": "images/Abhimanyu in Chakravyuha.jpg",
+  "abhimanyu breaking into chakravyuha": "images/Abhimanyu breaking into Chakravyuha.jpg",
+  "abhimanyu chakravyuha": "images/Abhimanyu in Chakravyuha.jpg",
+  "chakravyuha": "images/Abhimanyu in Chakravyuha.jpg",
+  "abhimanyu trap": "images/Abhimanyu in Chakravyuha.jpg",
+
+  "arjuna krishna chariot": "images/Arjuna and Krishna chariot in Kurukshetra.jpg",
+  "krishna arjuna chariot": "images/Arjuna and Krishna chariot in Kurukshetra.jpg",
+  "kurukshetra chariot": "images/Arjuna and Krishna chariot in Kurukshetra.jpg",
+  "arjuna and krishna chariot in kurukshetra": "images/Arjuna and Krishna chariot in Kurukshetra.jpg",
+  "kurukshetra": "images/Arjuna and Krishna chariot in Kurukshetra.jpg",
+
+  "arjuna fighting bhishma": "images/Arjuna fighting Bhishma.jpg",
+  "arjuna vs bhishma": "images/Arjuna fighting Bhishma.jpg",
+  "arjuna bhishma": "images/Arjuna fighting Bhishma.jpg",
+
+  "arjuna meeting hanuman on chariot flag": "images/Arjuna meeting Hanuman on chariot flag.jpg",
+  "hanuman on chariot": "images/Arjuna meeting Hanuman on chariot flag.jpg",
+  "kapidhwaja": "images/Arjuna meeting Hanuman on chariot flag.jpg",
+  "arjuna hanuman flag": "images/Arjuna meeting Hanuman on chariot flag.jpg",
+  "hanuman arjuna": "images/Arjuna meeting Hanuman on chariot flag.jpg",
+
+  "arjuna shooting the fish in swayamvar": "images/Arjuna shooting the fish in swayamvar.jpg",
+  "draupadi swayamvar": "images/Arjuna shooting the fish in swayamvar.jpg",
+  "fish eye target": "images/Arjuna shooting the fish in swayamvar.jpg",
+  "arjuna fish swayamvar": "images/Arjuna shooting the fish in swayamvar.jpg",
+
+  "arjuna beheading karna": "images/Arjuna beheading Karna.jpg",
+  "death of karna": "images/Arjuna beheading Karna.jpg",
+  "karna vadh": "images/Arjuna beheading Karna.jpg",
+
+  "ashwatthama killing pandava sons": "images/Ashwatthama killing Pandava sons.jpg",
+  "upapandavas death": "images/Ashwatthama killing Pandava sons.jpg",
+  "ashwatthama killing": "images/Ashwatthama killing Pandava sons.jpg",
+
+  "balarama refusing to fight in kurukshetra": "images/Balarama refusing to fight in Kurukshetra.jpg",
+  "balarama kurukshetra": "images/Balarama refusing to fight in Kurukshetra.jpg",
+
+  "bhima drinking dushasanas blood": "images/Bhima drinking Dushasana's blood.jpg",
+  "bhima killing dushasana": "images/Bhima drinking Dushasana's blood.jpg",
+  "bhima dushasana": "images/Bhima drinking Dushasana's blood.jpg",
+  "dushasana death": "images/Bhima drinking Dushasana's blood.jpg",
+
+  "bhima fighting duryodhana": "images/Bhima fighting Duryodhana.jpg",
+  "bhima vs duryodhana": "images/Bhima fighting Duryodhana.jpg",
+  "bhima duryodhana fight": "images/Bhima fighting Duryodhana.jpg",
+  "gada yudh": "images/Bhima fighting Duryodhana.jpg",
+
+  "bhima killing jarasandha": "images/Bhima killing Jarasandha.jpg",
+  "jarasandha vadh": "images/Bhima killing Jarasandha.jpg",
+  "bhima jarasandha": "images/Bhima killing Jarasandha.jpg",
+
+  "bhima killing kichaka": "images/Bhima killing Kichaka.jpg",
+  "kichaka vadh": "images/Bhima killing Kichaka.jpg",
+
+  "bhima meeting hanuman": "images/Bhima meeting Hanuman.jpg",
+  "bhima and hanuman": "images/Bhima meeting Hanuman.jpg",
+
+  "bhishma blessing pandavas before war": "images/Bhishma blessing Pandavas before war.jpg",
+  "bhishma blessing": "images/Bhishma blessing Pandavas before war.jpg",
+
+  "bhishma on bed of arrows": "images/Bhishma on bed of arrows.jpg",
+  "sharashayya": "images/Bhishma on bed of arrows.jpg",
+  "death of bhishma": "images/Bhishma on bed of arrows.jpg",
+  "bhishma arrows": "images/Bhishma on bed of arrows.jpg",
+  "bhishma sharashayya": "images/Bhishma on bed of arrows.jpg",
+  "bed of arrows": "images/Bhishma on bed of arrows.jpg",
+
+  "draupadi disrobing scene mahabharata": "images/Draupadi disrobing scene Mahabharata.jpg",
+  "vastraharan": "images/Draupadi disrobing scene Mahabharata.jpg",
+  "disrobing of draupadi": "images/Draupadi disrobing scene Mahabharata.jpg",
+  "draupadi vastraharan": "images/Draupadi disrobing scene Mahabharata.jpg",
+  "draupadi disrobing": "images/Draupadi disrobing scene Mahabharata.jpg",
+
+  "draupadi swearing revenge": "images/Draupadi swearing revenge.jpg",
+  "draupadi revenge": "images/Draupadi swearing revenge.jpg",
+
+  "duryodhana and bhima mace fight": "images/Duryodhana and Bhima mace fight.jpg",
+  "mace fight": "images/Duryodhana and Bhima mace fight.jpg",
+  "gada yudh": "images/Duryodhana and Bhima mace fight.jpg",
+
+  "duryodhana hiding in the lake": "images/Duryodhana hiding in the lake.jpg",
+  "duryodhana hiding lake": "images/Duryodhana hiding in the lake.jpg",
+  "duryodhana lake": "images/Duryodhana hiding in the lake.jpg",
+
+  "eklavya cutting his thumb": "images/Eklavya cutting his thumb.jpg",
+  "eklavya guru dakshina": "images/Eklavya cutting his thumb.jpg",
+  "eklavya thumb": "images/Eklavya cutting his thumb.jpg",
+
+  "gandhari": "images/Gandhari.jpg",
+  "gandhari cursing krishna": "images/Gandhari cursing Krishna.jpg",
+
+  "ghatotkacha fighting karna": "images/Ghatotkacha fighting Karna.jpg",
+  "ghatotkacha karna": "images/Ghatotkacha fighting Karna.jpg",
+
+  "ghatotkacha in battle": "images/Ghatotkacha in battle.jpg",
+  "ghatotkacha battle": "images/Ghatotkacha in battle.jpg",
+
+  "karna and arjuna duel": "images/Karna and Arjuna duel.jpg",
+  "karna vs arjuna": "images/Karna and Arjuna duel.jpg",
+  "arjuna karna duel": "images/Karna and Arjuna duel.jpg",
+  "karna arjuna fight": "images/Karna and Arjuna duel.jpg",
+
+  "karna giving away his armor": "images/Karna giving away his armor.jpg",
+  "karna giving away his earrings": "images/Karna giving away his earrings.jpg",
+  "kavach kundal": "images/Karna giving away his armor.jpg",
+  "karna kavach": "images/Karna giving away his armor.jpg",
+  "karna armor": "images/Karna giving away his armor.jpg",
+  "karna kavach kundal": "images/Karna giving away his armor.jpg",
+
+  "karna killing ghatotkacha": "images/Karna killing Ghatotkacha.jpg",
+  "ghatotkacha death": "images/Karna killing Ghatotkacha.jpg",
+
+  "karna meeting parashurama": "images/Karna meeting Parashurama.jpg",
+  "karna parashurama": "images/Karna meeting Parashurama.jpg",
+
+  "karna refusing to kill unarmed arjuna": "images/Karna refusing to kill unarmed Arjuna.jpg",
+  "karna refusing arjuna": "images/Karna refusing to kill unarmed Arjuna.jpg",
+  "karna not killing arjuna": "images/Karna refusing to kill unarmed Arjuna.jpg",
+
+  "karnas chariot wheel stuck in mud": "images/Karna's chariot wheel stuck in mud.jpg",
+  "karna wheel stuck": "images/Karna's chariot wheel stuck in mud.jpg",
+  "karna wheel mud": "images/Karna's chariot wheel stuck in mud.jpg",
+
+  "kripa and drona training kauravas": "images/Kripa and Drona training Kauravas.jpg",
+  "kripa drona training": "images/Kripa and Drona training Kauravas.jpg",
+  "drona teaching": "images/Kripa and Drona training Kauravas.jpg",
+
+  "krishna as peace messenger in hastinapur": "images/Krishna as peace messenger in Hastinapur.jpg",
+  "krishna shanti doot": "images/Krishna as peace messenger in Hastinapur.jpg",
+  "krishna peace messenger": "images/Krishna as peace messenger in Hastinapur.jpg",
+
+  "krishna cursing ashwatthama": "images/Krishna cursing Ashwatthama.jpg",
+
+  "krishna killing shishupala": "images/Krishna killing Shishupala.jpg",
+  "shishupala vadh": "images/Krishna killing Shishupala.jpg",
+  "krishna shishupala": "images/Krishna killing Shishupala.jpg",
+
+  "krishna lamenting after war": "images/Krishna lamenting after war.jpg",
+  "krishna lamenting": "images/Krishna lamenting after war.jpg",
+
+  "krishna lifting govardhan": "images/Krishna lifting Govardhan.jpg",
+  "govardhan parvat": "images/Krishna lifting Govardhan.jpg",
+  "krishna govardhan": "images/Krishna lifting Govardhan.jpg",
+  "govardhan lifting": "images/Krishna lifting Govardhan.jpg",
+
+  "krishna narrating bhagavad gita": "images/Krishna narrating Bhagavad Gita.jpg",
+  "gita upadesh": "images/Krishna narrating Bhagavad Gita.jpg",
+  "bhagavad gita": "images/Krishna narrating Bhagavad Gita.jpg",
+  "krishna gita": "images/Krishna narrating Bhagavad Gita.jpg",
+  "gita updesh": "images/Krishna narrating Bhagavad Gita.jpg",
+
+  "krishna reviving parikshit in the womb": "images/Krishna reviving Parikshit in the womb.jpg",
+  "parikshit revival": "images/Krishna reviving Parikshit in the womb.jpg",
+
+  "krishna saving arjuna from karnas arrow": "images/Krishna saving Arjuna from Karna's arrow.jpg",
+  "krishna saving arjuna": "images/Krishna saving Arjuna from Karna's arrow.jpg",
+
+  "krishna showing vishwarupa": "images/Krishna showing Vishvarupa.jpg",
+  "vishvarupa": "images/Krishna showing Vishvarupa.jpg",
+  "vishwaroop": "images/Krishna showing Vishvarupa.jpg",
+  "vishwarupa": "images/Krishna showing Vishvarupa.jpg",
+
+  "krishna stopping draupadis disrobing": "images/Krishna stopping Draupadi's disrobing.jpg",
+
+  "kunti revealing karnas birth": "images/Kunti revealing Karna's birth.jpg",
+  "kunti karna birth": "images/Kunti revealing Karna's birth.jpg",
+
+  "pandavas burning lakshagriha": "images/Pandavas burning Lakshagriha.jpg",
+  "lakshagriha": "images/Pandavas burning Lakshagriha.jpg",
+
+  "pandavas disguised in viratas court": "images/Pandavas disguised in Virata's court.jpg",
+  "ajnatvas": "images/Pandavas disguised in Virata's court.jpg",
+  "pandavas disguise": "images/Pandavas disguised in Virata's court.jpg",
+  "virata court": "images/Pandavas disguised in Virata's court.jpg",
+
+  "pandavas in exile": "images/Pandavas in exile.jpg",
+  "vanvas": "images/Pandavas in exile.jpg",
+  "pandavas exile": "images/Pandavas in exile.jpg",
+  "vanvas": "images/Pandavas in exile.jpg",
+
+  "shalya driving karnas chariot": "images/Shalya driving Karna's chariot.jpg",
+  "shalya karna chariot": "images/Shalya driving Karna's chariot.jpg",
+
+  "uttara kumara training with arjuna": "images/Uttara Kumara training with Arjuna.jpg",
+
+  "yudhisthira playing dice with shakuni": "images/Yudhishthira playing dice with Shakuni.jpg",
+  "dice game": "images/Yudhishthira playing dice with Shakuni.jpg",
+  "shakuni dice": "images/Yudhishthira playing dice with Shakuni.jpg",
+  "yudhishthira dice": "images/Yudhishthira playing dice with Shakuni.jpg"
+}
