@@ -1,0 +1,384 @@
+ID: 001
+Pose Name: Boat
+Sanskrit Name: Nāvāsana
+Description: Boat is a yoga pose that helps improve strength, flexibility, and focus. It is commonly used in practice for its physical and mental benefits.
+Benefits: Improves flexibility, Enhances focus, Strengthens muscles
+Category: Core
+Difficulty: Intermediate
+
+ID: 002
+Pose Name: Bow
+Sanskrit Name: Dhanurāsana
+Description: Bow is a yoga pose that helps improve strength, flexibility, and focus. It is commonly used in practice for its physical and mental benefits.
+Benefits: Opens chest, Strengthens back, Improves flexibility
+Category: Backbend
+Difficulty: Intermediate
+
+ID: 003
+Pose Name: Bridge
+Sanskrit Name: Setu Bandha Sarvāṅgāsana
+Description: Bridge is a heart-opening backbend that strengthens the spine and calms the mind.
+Benefits: Strengthens spine, Opens chest, Relieves stress
+Category: Backbend
+Difficulty: Beginner
+
+ID: 004
+Pose Name: Butterfly
+Sanskrit Name: Baddha Koṇāsana
+Description: A seated hip opener that improves inner thigh flexibility and relaxes the lower back.
+Benefits: Opens hips, Improves posture, Stimulates abdominal organs
+Category: Seated
+Difficulty: Beginner
+
+ID: 005
+Pose Name: Camel
+Sanskrit Name: Uṣṭrāsana
+Description: A deep kneeling backbend that stretches the front of the body and stimulates the nervous system.
+Benefits: Opens chest, Stretches thighs, Improves posture
+Category: Backbend
+Difficulty: Intermediate
+
+ID: 006
+Pose Name: Cat
+Sanskrit Name: Marjaryāsana
+Description: A gentle spinal warm-up that improves flexibility and coordination.
+Benefits: Relieves back tension, Increases spine mobility, Calms the mind
+Category: Warm-up
+Difficulty: Beginner
+
+ID: 007
+Pose Name: Chair
+Sanskrit Name: Utkaṭāsana
+Description: A strength-building standing pose that engages the legs and core.
+Benefits: Strengthens thighs, Builds stamina, Tones glutes
+Category: Standing
+Difficulty: Intermediate
+
+ID: 008
+Pose Name: Child's Pose
+Sanskrit Name: Balāsana
+Description: A resting pose that gently stretches the spine and calms the nervous system.
+Benefits: Relieves fatigue, Gently stretches spine, Calms the mind
+Category: Restorative
+Difficulty: Beginner
+
+ID: 009
+Pose Name: Corpse
+Sanskrit Name: Śavāsana
+Description: A final relaxation pose that allows the body to integrate the effects of practice.
+Benefits: Reduces stress, Promotes relaxation, Calms the mind
+Category: Restorative
+Difficulty: Beginner
+
+ID: 010
+Pose Name: Cow
+Sanskrit Name: Bitilāsana
+Description: A gentle backbend usually practiced with Cat Pose to warm up the spine.
+Benefits: Stretches spine, Improves posture, Relieves stress
+Category: Warm-up
+Difficulty: Beginner
+
+ID: 011
+Pose Name: Crescent Lunge
+Sanskrit Name: Ashta Chandrāsana
+Description: A standing pose that stretches the hips, chest, and legs.
+Benefits: Opens hips, Improves balance, Strengthens legs
+Category: Standing
+Difficulty: Intermediate
+
+ID: 012
+Pose Name: Crescent Moon
+Sanskrit Name: Ardha Chandrāsana
+Description: A gentle side-bending variation of lunge to open the side body.
+Benefits: Improves balance, Opens chest and hips, Lengthens spine
+Category: Standing
+Difficulty: Intermediate
+
+ID: 013
+Pose Name: Crow
+Sanskrit Name: Bakāsana
+Description: An arm balance that strengthens the wrists and improves concentration.
+Benefits: Builds arm strength, Enhances focus, Improves balance
+Category: Arm Balance
+Difficulty: Advanced
+
+ID: 014
+Pose Name: Dolphin
+Sanskrit Name: Pīñcha Mayūrāsana
+Description: An inversion prep pose that strengthens shoulders and core.
+Benefits: Builds shoulder strength, Opens chest, Improves focus
+Category: Inversion
+Difficulty: Intermediate
+
+ID: 015
+Pose Name: Downward-Facing Dog
+Sanskrit Name: Adho Mukha Śvānāsana
+Description: A foundational pose that stretches the entire body and builds strength.
+Benefits: Elongates spine, Strengthens arms and legs, Calms the brain
+Category: Inversion
+Difficulty: Beginner
+
+ID: 016
+Pose Name: Eagle
+Sanskrit Name: Garuḍāsana
+Description: A standing balance pose that builds focus and opens joints.
+Benefits: Improves concentration, Stretches shoulders, Strengthens ankles
+Category: Balance
+Difficulty: Intermediate
+
+ID: 017
+Pose Name: Extended Hand to Toe
+Sanskrit Name: Utthita Hasta Pādāṅguṣṭhāsana
+Description: A balance-focused standing pose that stretches the hamstrings.
+Benefits: Enhances balance, Stretches hamstrings, Strengthens legs
+Category: Balance
+Difficulty: Advanced
+
+ID: 018
+Pose Name: Extended Side Angle
+Sanskrit Name: Utthita Pārśvakoṇāsana
+Description: A standing pose that opens the side body and builds leg strength.
+Benefits: Stretches side body, Builds stamina, Opens hips
+Category: Standing
+Difficulty: Intermediate
+
+ID: 019
+Pose Name: Forearm Stand
+Sanskrit Name: Pīñcha Mayūrāsana
+Description: An advanced inversion that strengthens the shoulders and arms.
+Benefits: Improves balance, Builds core strength, Enhances focus
+Category: Inversion
+Difficulty: Advanced
+
+ID: 020
+Pose Name: Forward Bend with Shoulder Opener
+Sanskrit Name: Uttānāsana
+Description: A deep forward fold combined with a shoulder stretch.
+Benefits: Relieves back tension, Stretches spine and shoulders, Calms the mind
+Category: Forward Bend
+Difficulty: Intermediate
+
+ID: 021
+Pose Name: Garland Pose
+Sanskrit Name: Mālāsana
+Description: A deep squat that opens the hips and stretches the lower back.
+Benefits: Opens hips, Improves digestion, Strengthens ankles
+Category: Squatting
+Difficulty: Beginner
+
+ID: 022
+Pose Name: Half Boat
+Sanskrit Name: Ardha Nāvāsana
+Description: A modified core pose that builds abdominal strength with less strain.
+Benefits: Strengthens core, Improves focus, Supports lower back
+Category: Core
+Difficulty: Intermediate
+
+ID: 023
+Pose Name: Half Lord of the Fishes
+Sanskrit Name: Ardhā Matsyendrāsana
+Description: A seated spinal twist that improves mobility and massages internal organs.
+Benefits: Stimulates digestion, Enhances spinal flexibility, Detoxifies body
+Category: Twist
+Difficulty: Beginner
+
+ID: 024
+Pose Name: Half-Moon
+Sanskrit Name: Ardha Chandrāsana
+Description: A balance and stretch pose that enhances coordination and core strength.
+Benefits: Builds leg strength, Opens hips, Enhances balance
+Category: Balance
+Difficulty: Intermediate
+
+ID: 025
+Pose Name: Handstand
+Sanskrit Name: Adho Mukha Vṛkṣāsana
+Description: A challenging inversion that builds confidence and upper body power.
+Benefits: Builds arm strength, Enhances focus, Energizes body
+Category: Inversion
+Difficulty: Advanced
+
+ID: 026
+Pose Name: King Pigeon
+Sanskrit Name: Eka Pāda Rājakapotāsana
+Description: A deep backbend and hip opener that stretches the thighs and groin.
+Benefits: Opens hips, Stretches quads, Increases flexibility
+Category: Backbend
+Difficulty: Advanced
+
+ID: 027
+Pose Name: Lotus
+Sanskrit Name: Padmāsana
+Description: A classic meditative seat for calming the mind and stabilizing the spine.
+Benefits: Calms mind, Improves posture, Stretches ankles and knees
+Category: Seated
+Difficulty: Advanced
+
+ID: 028
+Pose Name: Low Lunge
+Sanskrit Name: Aṅjaneyāsana
+Description: A hip-opening lunge that improves flexibility and stability.
+Benefits: Opens hips, Improves balance, Strengthens legs
+Category: Standing
+Difficulty: Beginner
+
+ID: 029
+Pose Name: Pigeon
+Sanskrit Name: Supta Kapotāsana
+Description: A restorative hip opener that targets the glutes and piriformis.
+Benefits: Relieves lower back pain, Increases hip mobility, Reduces stress
+Category: Hip Opener
+Difficulty: Beginner
+
+ID: 030
+Pose Name: Plank
+Sanskrit Name: Phalakāsana
+Description: A fundamental strength pose that engages the full body.
+Benefits: Builds core strength, Tones arms, Improves endurance
+Category: Strength
+Difficulty: Beginner
+
+ID: 031
+Pose Name: Plow
+Sanskrit Name: Halāsana
+Description: An inversion that relaxes the spine and stimulates the thyroid.
+Benefits: Calms nervous system, Stretches shoulders, Stimulates thyroid
+Category: Inversion
+Difficulty: Intermediate
+
+ID: 032
+Pose Name: Pyramid
+Sanskrit Name: Pārśvottānāsana
+Description: A forward bend with one leg back that stretches the hamstrings and spine.
+Benefits: Stretches hamstrings, Improves balance, Calms the mind
+Category: Forward Bend
+Difficulty: Intermediate
+
+ID: 033
+Pose Name: Reverse Warrior
+Sanskrit Name: Pārśva Vīrabhadrāsana
+Description: A graceful standing pose that builds strength and flexibility.
+Benefits: Opens chest, Strengthens legs, Increases stamina
+Category: Standing
+Difficulty: Intermediate
+
+ID: 034
+Pose Name: Seated Forward Bend
+Sanskrit Name: Paśchimottānāsana
+Description: A calming seated pose that deeply stretches the spine and hamstrings.
+Benefits: Stimulates digestion, Reduces stress, Enhances flexibility
+Category: Forward Bend
+Difficulty: Beginner
+
+ID: 035
+Pose Name: Shoulder Stand
+Sanskrit Name: Sālamba Sarvāṅgāsana
+Description: An inversion that strengthens the neck and boosts circulation.
+Benefits: Improves blood flow, Stimulates thyroid, Calms the mind
+Category: Inversion
+Difficulty: Intermediate
+
+ID: 036
+Pose Name: Side Plank
+Sanskrit Name: Vasiṣṭhāsana
+Description: A balance and strength pose that tones the arms and core.
+Benefits: Strengthens obliques, Builds wrist strength, Enhances balance
+Category: Strength/Balance
+Difficulty: Intermediate
+
+ID: 037
+Pose Name: Side Splits
+Sanskrit Name: Upaviṣṭha Koṇāsana
+Description: A deep seated stretch that improves flexibility in the hamstrings and groin.
+Benefits: Improves hip mobility, Stretches inner thighs, Calms the mind
+Category: Seated
+Difficulty: Intermediate
+
+ID: 038
+Pose Name: Sphinx
+Sanskrit Name: Sālamba Bhujaṅgāsana
+Description: A gentle backbend for beginners to open the chest and strengthen the spine.
+Benefits: Strengthens lower back, Improves posture, Opens heart
+Category: Backbend
+Difficulty: Beginner
+
+ID: 039
+Pose Name: Splits
+Sanskrit Name: Hanumānāsana
+Description: A deep stretch for the hamstrings, hip flexors, and groin.
+Benefits: Improves flexibility, Opens hips, Builds patience
+Category: Seated
+Difficulty: Advanced
+
+ID: 040
+Pose Name: Standing Forward Bend
+Sanskrit Name: Uttānāsana
+Description: A calming inversion that stretches the entire back side of the body.
+Benefits: Reduces stress, Stretches hamstrings, Improves digestion
+Category: Forward Bend
+Difficulty: Beginner
+
+ID: 041
+Pose Name: Tree
+Sanskrit Name: Vṛkṣāsana
+Description: A standing balance pose that promotes focus and strengthens the lower body.
+Benefits: Enhances concentration, Strengthens legs, Improves posture
+Category: Balance
+Difficulty: Beginner
+
+ID: 042
+Pose Name: Triangle
+Sanskrit Name: Trikoṇāsana
+Description: A classic standing pose that stretches the sides of the body and opens the hips.
+Benefits: Stretches spine, Opens chest, Strengthens legs
+Category: Standing
+Difficulty: Beginner
+
+ID: 043
+Pose Name: Upward-Facing Dog
+Sanskrit Name: Ūrdhva Mukha Śvānāsana
+Description: A strong backbend that opens the front body and strengthens the arms.
+Benefits: Opens chest, Strengthens arms, Improves posture
+Category: Backbend
+Difficulty: Intermediate
+
+ID: 044
+Pose Name: Warrior One
+Sanskrit Name: Vīrabhadrāsana I
+Description: A powerful standing pose that enhances strength, stability, and confidence.
+Benefits: Builds stamina, Opens hips, Strengthens legs
+Category: Standing
+Difficulty: Beginner
+
+ID: 045
+Pose Name: Warrior Three
+Sanskrit Name: Vīrabhadrāsana III
+Description: A challenging standing balance that builds strength and focus.
+Benefits: Enhances balance, Strengthens back and legs, Improves concentration
+Category: Balance
+Difficulty: Intermediate
+
+ID: 046
+Pose Name: Warrior Two
+Sanskrit Name: Vīrabhadrāsana II
+Description: A grounded pose that builds strength and improves endurance.
+Benefits: Strengthens legs, Increases stamina, Opens hips
+Category: Standing
+Difficulty: Beginner
+
+ID: 047
+Pose Name: Wheel
+Sanskrit Name: Ūrdhva Dhanurāsana
+Description: An intense backbend that builds flexibility and opens the chest.
+Benefits: Opens heart, Strengthens arms and back, Improves energy
+Category: Backbend
+Difficulty: Advanced
+
+ID: 048
+Pose Name: Wild Thing
+Sanskrit Name: Camatkārāsana
+Description: A heart-opening pose that combines strength, grace, and freedom.
+Benefits: Opens chest, Improves mobility, Builds confidence
+Category: Backbend
+Difficulty: Intermediate
+
