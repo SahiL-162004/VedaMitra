@@ -35,3 +35,9 @@ markdown
 
 # Utilities
 regex
+
+# Image Search
+google-search-results
+
+# Age Detection
+opencv-python onnxruntime

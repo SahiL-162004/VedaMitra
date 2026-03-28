@@ -9,12 +9,9 @@ import numpy as np
 import sounddevice as sd
 import unicodedata
 import uuid
-import threading
 import time
 import json
 import base64
-import json
-import os
 import re
 from serpapi import GoogleSearch
 import markdown
@@ -24,8 +21,10 @@ from pinecone import Pinecone
 from langchain_pinecone import PineconeVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_mistralai.chat_models import ChatMistralAI
+from langchain_core.prompts import PromptTemplate
 from langchain_classic.chains import ConversationalRetrievalChain
 from langchain_classic.memory import ConversationBufferMemory
+from age_detection import detect_age, get_age_group
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
@@ -37,10 +36,8 @@ st.set_page_config(
 # ---------------- CUSTOM CSS ----------------
 st.markdown("""
 <style>
-/* ── Google Fonts ── */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 
-/* ── Root palette ── */
 :root {
     --saffron:       #E8710A;
     --saffron-glow:  #F9A825;
@@ -55,7 +52,6 @@ st.markdown("""
     --lotus-pink:    #D4608A;
 }
 
-/* ── Global background & text ── */
 html, body, [data-testid="stAppViewContainer"] {
     background-color: var(--deep-indigo) !important;
     color: var(--cream) !important;
@@ -65,13 +61,11 @@ html, body, [data-testid="stAppViewContainer"] {
 
 [data-testid="stHeader"] { background: transparent !important; }
 
-/* Sidebar & main block */
 [data-testid="block-container"] {
     padding-top: 2rem;
     padding-bottom: 3rem;
 }
 
-/* ── Mandala / decorative top strip ── */
 .vedamitra-header {
     text-align: center;
     padding: 2.5rem 1rem 1.5rem;
@@ -95,16 +89,13 @@ html, body, [data-testid="stAppViewContainer"] {
     margin-top: 1.5rem;
 }
 
-/* ── Main title ── */
 .main-title {
     font-family: 'Cinzel', serif;
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     color: var(--gold-light);
-    text-shadow:
-        0 0 30px rgba(201, 150, 58, 0.5),
-        0 2px 4px rgba(0,0,0,0.6);
+    text-shadow: 0 0 30px rgba(201, 150, 58, 0.5), 0 2px 4px rgba(0,0,0,0.6);
     margin: 0;
     line-height: 1.1;
 }
@@ -115,7 +106,6 @@ html, body, [data-testid="stAppViewContainer"] {
     text-shadow: 0 0 20px rgba(232, 113, 10, 0.7);
 }
 
-/* ── Subtitle ── */
 .sub-title {
     font-family: 'EB Garamond', serif;
     font-style: italic;
@@ -125,7 +115,19 @@ html, body, [data-testid="stAppViewContainer"] {
     margin-top: 0.5rem;
 }
 
-/* ── Section heading ── */
+.age-badge {
+    display: inline-block;
+    background: rgba(201, 150, 58, 0.1);
+    border: 1px solid rgba(201, 150, 58, 0.3);
+    border-radius: 20px;
+    padding: 0.25rem 0.9rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    margin-top: 0.6rem;
+}
+
 .domain-heading {
     font-family: 'Cinzel', serif;
     font-size: 0.8rem;
@@ -135,7 +137,6 @@ html, body, [data-testid="stAppViewContainer"] {
     margin: 2rem 0 0.8rem;
 }
 
-/* ── Category buttons ── */
 div[data-testid="column"] button {
     background: linear-gradient(135deg, var(--indigo-card), #120D28) !important;
     border: 1px solid var(--indigo-border) !important;
@@ -168,7 +169,6 @@ div[data-testid="column"] button:hover {
 
 div[data-testid="column"] button:hover::before { opacity: 1; }
 
-/* ── Success / Warning banners ── */
 [data-testid="stAlert"] {
     background: rgba(201, 150, 58, 0.08) !important;
     border: 1px solid rgba(201, 150, 58, 0.3) !important;
@@ -178,7 +178,6 @@ div[data-testid="column"] button:hover::before { opacity: 1; }
     font-size: 1rem !important;
 }
 
-/* ── Text input ── */
 [data-testid="stTextInput"] input {
     background: var(--indigo-card) !important;
     border: 1px solid var(--indigo-border) !important;
@@ -195,11 +194,8 @@ div[data-testid="column"] button:hover::before { opacity: 1; }
     box-shadow: 0 0 0 3px rgba(201, 150, 58, 0.12) !important;
 }
 
-[data-testid="stTextInput"] input::placeholder {
-    color: var(--muted) !important;
-}
+[data-testid="stTextInput"] input::placeholder { color: var(--muted) !important; }
 
-/* ── Mic button ── */
 div[data-testid="column"]:last-child button {
     background: linear-gradient(135deg, #2A1F0A, #1A1300) !important;
     border: 1px solid var(--gold) !important;
@@ -216,7 +212,6 @@ div[data-testid="column"]:last-child button:hover {
     transform: scale(1.05) !important;
 }
 
-/* ── Chat bubbles ── */
 .user-bubble {
     background: linear-gradient(135deg, #1F1740, #18103A);
     border: 1px solid var(--indigo-border);
@@ -226,7 +221,6 @@ div[data-testid="column"]:last-child button:hover {
     color: var(--cream);
     font-family: 'EB Garamond', serif;
     font-size: 1rem;
-    position: relative;
 }
 
 .user-bubble .bubble-label {
@@ -250,7 +244,6 @@ div[data-testid="column"]:last-child button:hover {
     font-family: 'EB Garamond', serif;
     font-size: 1.05rem;
     line-height: 1.75;
-    position: relative;
 }
 
 .bot-bubble .bubble-label {
@@ -263,7 +256,6 @@ div[data-testid="column"]:last-child button:hover {
     margin-bottom: 0.5rem;
 }
 
-/* Markdown within bot bubble */
 .bot-bubble h1, .bot-bubble h2, .bot-bubble h3 {
     font-family: 'Cinzel', serif;
     color: var(--gold-light);
@@ -272,14 +264,9 @@ div[data-testid="column"]:last-child button:hover {
 
 .bot-bubble strong { color: var(--gold-light); }
 .bot-bubble em { color: var(--lotus-pink); }
-
-.bot-bubble ul, .bot-bubble ol {
-    padding-left: 1.4rem;
-}
-
+.bot-bubble ul, .bot-bubble ol { padding-left: 1.4rem; }
 .bot-bubble li { margin-bottom: 0.3rem; }
 
-/* ── Shloka box ── */
 .shloka-box {
     background: rgba(201, 150, 58, 0.06);
     border: 1px solid rgba(201, 150, 58, 0.25);
@@ -303,14 +290,8 @@ div[data-testid="column"]:last-child button:hover {
     margin-bottom: 0.5rem;
 }
 
-/* ── Divider ── */
-hr {
-    border: none;
-    border-top: 1px solid var(--indigo-border);
-    margin: 1.5rem 0;
-}
+hr { border: none; border-top: 1px solid var(--indigo-border); margin: 1.5rem 0; }
 
-/* ── Image display ── */
 [data-testid="stImage"] img {
     border-radius: 14px;
     border: 1px solid var(--indigo-border);
@@ -318,26 +299,19 @@ hr {
     margin: 0.5rem 0 1rem;
 }
 
-/* ── Audio player ── */
 [data-testid="stAudio"] audio {
     filter: invert(0.85) hue-rotate(180deg) saturate(0.6);
     border-radius: 30px;
     width: 100%;
 }
 
-/* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--deep-indigo); }
-::-webkit-scrollbar-thumb {
-    background: var(--indigo-border);
-    border-radius: 3px;
-}
+::-webkit-scrollbar-thumb { background: var(--indigo-border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
-/* ── Spinner ── */
 [data-testid="stSpinner"] { color: var(--saffron) !important; }
 
-/* ── Info boxes ── */
 .stInfo {
     background: rgba(201, 150, 58, 0.06) !important;
     border: 1px solid rgba(201, 150, 58, 0.2) !important;
@@ -368,6 +342,126 @@ if "startup_audio_played" not in st.session_state:
 # ---------------- ENV ----------------
 load_dotenv()
 
+# ---------------- AGE DETECTION (once per session) ----------------
+if "age_group" not in st.session_state:
+    with st.spinner("📷 Detecting viewer profile…"):
+        _age = detect_age()
+        st.session_state.age_group    = get_age_group(_age)
+        st.session_state.detected_age = _age
+
+# ── Age badge below header ──
+_AGE_BADGE_ICONS = {"child": "🧒", "teen": "🧑", "adult": "👤", "senior": "🧓", "unknown": "👤"}
+_age_icon  = _AGE_BADGE_ICONS.get(st.session_state.age_group, "👤")
+_age_label = (
+    f"~{st.session_state.detected_age} yrs · {st.session_state.age_group.capitalize()}"
+    if st.session_state.detected_age else "Profile: Unknown"
+)
+st.markdown(
+    f'<div style="text-align:center"><span class="age-badge">{_age_icon} {_age_label}</span></div>',
+    unsafe_allow_html=True
+)
+
+# ---------------- AGE-AWARE SYSTEM PROMPTS ----------------
+AGE_SYSTEM_PROMPTS = {
+    "child": """You are VedaMitra, a warm and friendly guide explaining ancient Indian wisdom to a young child under 13 years old.
+- Use very simple words that a child can easily understand. Avoid any difficult or complex terms.
+- Use fun comparisons, short stories and relatable examples. For example: "Think of Dharma like the rules of a game that help everyone be fair and kind."
+- Keep your sentences very short. Be warm, playful and encouraging.
+- If you must use a Sanskrit word, immediately explain it in the simplest possible way right after.
+- Keep your answer to 3 to 5 short sentences maximum. Do not overwhelm the child with too much information at once.""",
+
+    "teen": """You are VedaMitra, explaining ancient Indian wisdom to a teenager between 13 and 19 years old.
+- Use clear, modern and friendly language. Avoid being preachy, overly formal or boring.
+- Make the answer relatable to everyday teenage life wherever naturally possible.
+- You can use some Sanskrit terms but always explain them simply right after using them.
+- Use bullet points when it makes things clearer and easier to read.
+- Give a focused, medium-length answer. Detailed enough to be genuinely useful but not so long it loses their attention.""",
+
+    "adult": """You are VedaMitra, a knowledgeable guide on ancient Indian wisdom speaking to an adult.
+- Use proper vocabulary. Sanskrit terms are welcome with brief contextual explanations where needed.
+- Provide depth, nuance and real context. Reference specific scriptures, texts or philosophical schools where relevant.
+- Be precise, informative and respectful in tone.
+- Structure the answer clearly. You may use headings or bullet points for complex multi-part topics.
+- Give a thorough, well-rounded and intellectually satisfying answer.""",
+
+    "senior": """You are VedaMitra, respectfully sharing ancient Indian wisdom with a senior person above 50 years old.
+- Use clear, warm and deeply respectful language. Speak with reverence for their life experience and wisdom.
+- Avoid unnecessary jargon. When using Sanskrit terms, explain them gently and naturally within the flow.
+- Draw meaningful connections to traditional values, lived experience and timeless wisdom where appropriate.
+- Keep the tone calm, thoughtful and unhurried. Do not make the response excessively long.
+- Be compassionate, patient and dignified throughout your response.""",
+
+    "unknown": """You are VedaMitra, a knowledgeable and friendly guide on ancient Indian wisdom.
+- Use clear and accessible language suitable for a general adult audience.
+- Provide balanced depth that is neither too simple nor too complex.
+- Explain Sanskrit terms naturally when used. Be informative, accurate and respectful.""",
+}
+
+# ---------------- BUILD AGE-AWARE RAG CHAIN ----------------
+def build_chain(retriever, llm, memory, age_group):
+    """
+    Builds a ConversationalRetrievalChain with the age-appropriate system prompt
+    embedded directly into the LLM prompt template, so every answer Mistral
+    generates is written in the right vocabulary, depth and tone for the user.
+    """
+    system_prompt = AGE_SYSTEM_PROMPTS.get(age_group, AGE_SYSTEM_PROMPTS["unknown"])
+
+    prompt_template = f"""{system_prompt}
+
+Use the following context retrieved from ancient Indian texts to answer the question.
+If the context does not contain enough information, draw on your own knowledge but stay true to the spirit and accuracy of Indian philosophy and tradition.
+
+Context:
+{{context}}
+
+Chat History:
+{{chat_history}}
+
+Question: {{question}}
+
+Answer:"""
+
+    prompt = PromptTemplate(
+        input_variables=["context", "chat_history", "question"],
+        template=prompt_template
+    )
+
+    return ConversationalRetrievalChain.from_llm(
+        llm=llm,
+        retriever=retriever,
+        memory=memory,
+        combine_docs_chain_kwargs={"prompt": prompt}
+    )
+
+# ---------------- LOAD RAG COMPONENTS (cached) ----------------
+@st.cache_resource
+def load_rag_components(namespace):
+    """
+    Loads retriever, LLM and memory separately and caches them.
+    The chain is built outside this function so the prompt can be
+    customised per age group without breaking the cache.
+    """
+    embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
+    )
+    pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
+    vectorstore = PineconeVectorStore(
+        index=pc.Index("iks-rag-v2"),
+        embedding=embeddings,
+        namespace=namespace
+    )
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
+    llm = ChatMistralAI(
+        mistral_api_key=os.getenv("MISTRAL_API_KEY"),
+        model="mistral-large-latest",
+        temperature=0.3
+    )
+    memory = ConversationBufferMemory(
+        memory_key="chat_history",
+        return_messages=True
+    )
+    return retriever, llm, memory
+
 # ---------------- CATEGORY ----------------
 CATEGORY_NAMESPACE_MAP = {
     "🧘 Yoga":        "yoga",
@@ -395,17 +489,17 @@ else:
     st.warning("Please select a knowledge domain to continue.")
     st.stop()
 
-# ---------------- IMAGE MAP ----------------
-@st.cache_resource
-
+# ── Both age and category are now known — build the age-aware chain ──
+retriever, llm, memory = load_rag_components(st.session_state.selected_category)
+qa_chain = build_chain(retriever, llm, memory, st.session_state.age_group)
 
 # ---------------- LOAD LOCAL IMAGE MAP ----------------
+@st.cache_resource
 def load_image_map():
     with open("data/image_map.json", "r") as f:
         return json.load(f)
 
 image_map = load_image_map()
-
 
 # ---------------- SERPAPI IMAGE SEARCH ----------------
 def fetch_images(query, num_images=3):
@@ -416,19 +510,14 @@ def fetch_images(query, num_images=3):
             "api_key": os.getenv("SERPAPI_KEY"),
             "num": num_images
         }
-
         results = GoogleSearch(params).get_dict()
-
         return [img["original"] for img in results.get("images_results", [])[:num_images]]
-
     except Exception:
         return []
-
 
 # ---------------- QUERY OPTIMIZATION ----------------
 def extract_search_query(query):
     query = query.lower()
-
     if "yoga" in query:
         return query + " yoga pose"
     elif "who" in query or "sita" in query or "rama" in query:
@@ -436,17 +525,12 @@ def extract_search_query(query):
     else:
         return query + " india"
 
-
-# ---------------- FINAL HYBRID FUNCTION ----------------
+# ---------------- HYBRID IMAGE FETCH ----------------
 def fetch_image(query):
     cleaned_query = re.sub(r'[^\w\s]', '', query.lower())
-
-    # 🔍 1. Check local dataset first
     for key, path in image_map.items():
         if key in cleaned_query:
-            return [os.path.join("data", path)]  # return as list
-
-    # 🌐 2. Fallback to SerpAPI
+            return [os.path.join("data", path)]
     search_query = extract_search_query(cleaned_query)
     return fetch_images(search_query, num_images=3)
 
@@ -495,36 +579,6 @@ def record_audio():
 def transcribe(audio):
     segments, _ = whisper_model.transcribe(audio, beam_size=3)
     return " ".join([seg.text for seg in segments]).strip()
-
-# ---------------- RAG ----------------
-@st.cache_resource
-def load_rag(namespace):
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
-    )
-    pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
-    vectorstore = PineconeVectorStore(
-        index=pc.Index("iks-rag-v2"),
-        embedding=embeddings,
-        namespace=namespace
-    )
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 2})
-    llm = ChatMistralAI(
-        mistral_api_key=os.getenv("MISTRAL_API_KEY"),
-        model="mistral-large-latest",
-        temperature=0.3
-    )
-    memory = ConversationBufferMemory(
-        memory_key="chat_history",
-        return_messages=True
-    )
-    return ConversationalRetrievalChain.from_llm(
-        llm=llm,
-        retriever=retriever,
-        memory=memory
-    )
-
-qa_chain = load_rag(st.session_state.selected_category)
 
 # ---------------- SHLOKA ----------------
 @st.cache_resource
@@ -591,11 +645,12 @@ if user_input:
     with st.spinner("Consulting the ancient texts…"):
         result = qa_chain.invoke({"question": user_input})
         answer = result["answer"]
+        # answer is natively age-appropriate — Mistral wrote it that way
+        # because the age-aware system prompt was embedded in the chain
 
     images = fetch_image(user_input)
 
     if images:
-
         cols = st.columns(len(images))
         for i, img in enumerate(images):
             with cols[i]:
@@ -618,5 +673,6 @@ if user_input:
         )
         time.sleep(0.04)
 
+    # TTS reads the answer directly — it is already clean, no post-processing needed
     audio_file = asyncio.run(generate_audio(answer))
     st.audio(audio_file)
