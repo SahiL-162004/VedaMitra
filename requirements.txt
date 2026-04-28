@@ -40,4 +40,5 @@ regex
 google-search-results
 
 # Age Detection
-opencv-python onnxruntime
+opencv-python
+onnxruntime
